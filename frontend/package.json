@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "apollo-link-context": "^1.0.20",
+    "formik": "^2.2.9",
+    "graphql": "^16.6.0",
     "next": "12.2.5",
+    "node-fetch": "^3.2.10",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sweetalert2": "^11.4.29",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

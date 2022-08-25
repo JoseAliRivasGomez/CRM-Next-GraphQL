@@ -12,10 +12,11 @@ const crearToken = (usuario, expiresIn) => {
 
 const resolvers = {
     Query: {
-        obtenerUsuario: async (_, {token}, ctx, info) => {
-            const usuario = await jwt.verify(token, process.env.JWT_KEY);
-            console.log(usuario);
-            return usuario;
+        obtenerUsuario: async (_, {}, ctx, info) => {
+            // const usuario = await jwt.verify(token, process.env.JWT_KEY);
+            // console.log(usuario);
+            // return usuario;
+            return ctx.usuario;
         },
         obtenerProductos: async () => {
             try {
