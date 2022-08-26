@@ -24,7 +24,7 @@ export const Header = () => {
             refetch();
             //console.log('Header recargado');
         }
-    }, [])
+    }, [refetch])
     
 
     const cerrarSesion = () => {
@@ -39,8 +39,8 @@ export const Header = () => {
     }
 
   return (
-    <div className="flex justify-between mb-6">
-        <p className="mr-2">Hola: {data?.obtenerUsuario?.nombre} {data?.obtenerUsuario?.apellido}</p>
+    <div className="sm:flex sm:justify-between mb-6">
+        <p className="mr-2 mb-5 lg:mb-0">Hola: {data?.obtenerUsuario?.nombre} {data?.obtenerUsuario?.apellido}</p>
         <button className='bg-blue-800 w-full sm:w-auto font-bold uppercase text-xs rounded py-2 px-2 text-white shadow-md' type="button"
             onClick={cerrarSesion}>Cerrar sesion</button>
     </div>

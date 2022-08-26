@@ -54,10 +54,15 @@ const Login = () => {
                 });
                 //console.log(data);
                 setMensaje('Autenticando...');
-                const {token} = data.autenticarUsuario;
-                localStorage.setItem('token', token);
-                localStorage.setItem('reloadHeader', 'yes');
-                localStorage.setItem('reloadClients', 'yes');
+                
+                setTimeout(() => {
+                    const {token} = data.autenticarUsuario;
+                    localStorage.setItem('token', token);
+                    localStorage.setItem('reloadHeader', 'yes');
+                    localStorage.setItem('reloadClients', 'yes');
+                    localStorage.setItem('reloadPedidos', 'yes');
+                }, 500);
+
                 setTimeout(() => {
                     setMensaje(null);
                     router.push('/');

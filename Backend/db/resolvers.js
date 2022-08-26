@@ -69,7 +69,7 @@ const resolvers = {
         },
         obtenerPedidosVendedor: async (_, {}, ctx, info) => {
             try {
-                const pedidos = await Pedido.find({vendedor: ctx.usuario?.id.toString()});
+                const pedidos = await Pedido.find({vendedor: ctx.usuario?.id.toString()}).populate('cliente');
                 return pedidos;
             } catch (error) {
                 console.log(error);
@@ -109,12 +109,13 @@ const resolvers = {
                     }
                 },
                 {
-                    $limit: 5
+                    $sort: {total: -1, _id : 1}
                 },
                 {
-                    $sort: {total: -1}
-                }
+                    $limit: 10
+                },
             ]);
+            console.log(clientes);
             return clientes;
         },
         mejoresVendedores: async () => {
@@ -133,11 +134,11 @@ const resolvers = {
                     }
                 },
                 {
-                    $limit: 5
+                    $sort: {total: -1, _id : 1}
                 },
                 {
-                    $sort: {total: -1}
-                }
+                    $limit: 10
+                },
             ]);
             return vendedores;
         },
