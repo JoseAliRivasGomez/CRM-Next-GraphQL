@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import { useQuery, useMutation, gql } from '@apollo/client';
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from 'next/link';
 
 const LOGIN = gql`
     mutation autenticarUsuario($input: AutenticarInput) {
@@ -121,6 +122,9 @@ const Login = () => {
                             <p className="font-bold">{formik.errors.password}</p>
                         </div>
                     ) : null}
+                    <Link href='/nuevacuenta'>
+                        <a className="underline float-right">Crear cuenta</a>
+                    </Link>
                     <input type="submit" className="bg-gray-800 w-full mt-5 p-2 text-white uppercase hover:bg-gray-900 cursor-pointer" value="Iniciar sesión" />
                 </form>
             </div>

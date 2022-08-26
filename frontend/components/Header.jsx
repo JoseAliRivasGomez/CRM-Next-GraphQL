@@ -24,7 +24,7 @@ export const Header = () => {
             refetch();
             //console.log('Header recargado');
         }
-    }, [refetch])
+    }, [])
     
 
     const cerrarSesion = () => {
